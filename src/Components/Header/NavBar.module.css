@@ -1,0 +1,22 @@
+.header ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+.header li {
+  margin: 0 1rem;
+  list-style: none;
+}
+.header a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+.header a:hover,
+.header a:active,
+.header a.active {
+  color: #95bcf0;
+  padding-bottom: 0.25rem;
+  border-bottom: 4px solid #95bcf0;
+}

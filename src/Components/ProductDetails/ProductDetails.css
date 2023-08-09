@@ -1,0 +1,24 @@
+.lightbox-container .lightbox-img-thumbnail:first-child {
+  width: 60% !important;
+}
+.lightbox-container .lightbox-img-thumbnail {
+  width: 17% !important;
+  height: auto !important;
+  display: inline-block;
+  float: left;
+  border: 1px solid #000;
+  padding: 5px;
+  background-color: #fff;
+}
+.lightbox-backdrop.hide-controls div {
+  opacity: 1 !important;
+  pointer-events: auto !important ;
+}
+@media screen and (min-width: 992px) {
+  .product-details {
+    padding-left: 2rem;
+  }
+  .product-details.text-black {
+    border-left: 1px solid #000;
+  }
+}
