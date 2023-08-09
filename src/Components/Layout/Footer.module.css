@@ -1,4 +1,8 @@
-footer {
+.footerNav {
+  margin: 0;
+  padding: 0;
+}
+.footer {
   background-color: #56ccf2;
   display: flex;
   align-items: center;
@@ -19,4 +23,12 @@ footer {
   color: #fff;
   font-size: 60px;
   font-weight: bold;
+}
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 30px;
+  }
+  .links {
+    margin: 10px;
+  }
 }

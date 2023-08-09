@@ -2,10 +2,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5%;
+  gap: 0%;
 }
 .header li {
-  margin: 0 1rem;
+  margin: 0 1.2rem;
   list-style: none;
 }
 .header a {
@@ -19,4 +19,16 @@
   color: #95bcf0;
   padding-bottom: 0.25rem;
   border-bottom: 4px solid #95bcf0;
+}
+@media screen and (max-width: 768px) {
+  .header ul {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 10px;
+    flex-direction: column;
+  }
+  .header li {
+    margin: 10px;
+    list-style: none;
+  }
 }

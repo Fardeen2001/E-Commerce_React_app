@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useCart } from "react-use-cart";
 import AuthContext from "../../ContextStore/auth-context";
+import Nav from "react-bootstrap/Nav";
 const NavBar = (props) => {
   const authCxt = useContext(AuthContext);
   const navigate = useNavigate();
@@ -16,89 +17,171 @@ const NavBar = (props) => {
   };
   return (
     <Navbar
+      collapseOnSelect
+      expand="md"
+      className="bg-body-tertiary"
       bg="dark"
       data-bs-theme="dark"
-      className="bg-body-tertiary"
       fixed="top"
-      style={{ backgroundColor: "#000", color: "#fff" }}
     >
       <Container>
-        <Container>
-          <nav className={classes.header}>
-            <ul>
-              <li>
-                <NavLink
-                  to="/"
-                  className={(navdata) =>
-                    navdata.isActive ? classes.active : ""
-                  }
-                >
-                  Home
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/Store"
-                  className={(navdata) =>
-                    navdata.isActive ? classes.active : ""
-                  }
-                >
-                  Store
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/About"
-                  className={(navdata) =>
-                    navdata.isActive ? classes.active : ""
-                  }
-                >
-                  About
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/Contact"
-                  className={(navdata) =>
-                    navdata.isActive ? classes.active : ""
-                  }
-                >
-                  Contact Us
-                </NavLink>
-              </li>
-              <li>
-                {!authCxt.isLoggedIn && (
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            <nav className={classes.header}>
+              <ul>
+                <li>
                   <NavLink
-                    to="/AuthForm"
+                    to="/"
                     className={(navdata) =>
                       navdata.isActive ? classes.active : ""
                     }
                   >
-                    LogIn
+                    Home
                   </NavLink>
-                )}
-              </li>
-              <li>
-                {authCxt.isLoggedIn && (
-                  <Button variant="info" onClick={logoutHandler}>
-                    Logout
-                  </Button>
-                )}
-              </li>
-            </ul>
-          </nav>
-        </Container>
-        <Navbar.Toggle />
-        <Navbar.Collapse
-          className="justify-content-end"
-          style={{ width: "10%" }}
-        >
-          <Button variant="info" onClick={props.onShow}>
-            Cart <span>{totalItems}</span>
-          </Button>
+                </li>
+                <li>
+                  <NavLink
+                    to="/Store"
+                    className={(navdata) =>
+                      navdata.isActive ? classes.active : ""
+                    }
+                  >
+                    Store
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/About"
+                    className={(navdata) =>
+                      navdata.isActive ? classes.active : ""
+                    }
+                  >
+                    About
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/Contact"
+                    className={(navdata) =>
+                      navdata.isActive ? classes.active : ""
+                    }
+                  >
+                    Contact Us
+                  </NavLink>
+                </li>
+                <li>
+                  {!authCxt.isLoggedIn && (
+                    <NavLink
+                      to="/AuthForm"
+                      className={(navdata) =>
+                        navdata.isActive ? classes.active : ""
+                      }
+                    >
+                      LogIn
+                    </NavLink>
+                  )}
+                </li>
+                <li>
+                  {authCxt.isLoggedIn && (
+                    <Button variant="info" onClick={logoutHandler}>
+                      Logout
+                    </Button>
+                  )}
+                </li>
+              </ul>
+            </nav>
+          </Nav>
         </Navbar.Collapse>
+        <Button variant="info" onClick={props.onShow}>
+          Cart <span>{totalItems}</span>{" "}
+        </Button>
       </Container>
     </Navbar>
+    // <Navbar
+    //   bg="dark"
+    //   data-bs-theme="dark"
+    //   className="bg-body-tertiary"
+    //   fixed="top"
+    //   style={{ backgroundColor: "#000", color: "#fff" }}
+    // >
+    //   <Container>
+    //     <Container>
+    //       <nav className={classes.header}>
+    //         <ul>
+    //           <li>
+    //             <NavLink
+    //               to="/"
+    //               className={(navdata) =>
+    //                 navdata.isActive ? classes.active : ""
+    //               }
+    //             >
+    //               Home
+    //             </NavLink>
+    //           </li>
+    //           <li>
+    //             <NavLink
+    //               to="/Store"
+    //               className={(navdata) =>
+    //                 navdata.isActive ? classes.active : ""
+    //               }
+    //             >
+    //               Store
+    //             </NavLink>
+    //           </li>
+    //           <li>
+    //             <NavLink
+    //               to="/About"
+    //               className={(navdata) =>
+    //                 navdata.isActive ? classes.active : ""
+    //               }
+    //             >
+    //               About
+    //             </NavLink>
+    //           </li>
+    //           <li>
+    //             <NavLink
+    //               to="/Contact"
+    //               className={(navdata) =>
+    //                 navdata.isActive ? classes.active : ""
+    //               }
+    //             >
+    //               Contact Us
+    //             </NavLink>
+    //           </li>
+    //           <li>
+    //             {!authCxt.isLoggedIn && (
+    //               <NavLink
+    //                 to="/AuthForm"
+    //                 className={(navdata) =>
+    //                   navdata.isActive ? classes.active : ""
+    //                 }
+    //               >
+    //                 LogIn
+    //               </NavLink>
+    //             )}
+    //           </li>
+    //           <li>
+    //             {authCxt.isLoggedIn && (
+    //               <Button variant="info" onClick={logoutHandler}>
+    //                 Logout
+    //               </Button>
+    //             )}
+    //           </li>
+    //         </ul>
+    //       </nav>
+    //     </Container>
+
+    //     <Navbar.Collapse
+    //       className="justify-content-end"
+    //       style={{ width: "10%" }}
+    //     >
+    //       <Button variant="info" onClick={props.onShow}>
+    //         Cart <span>{totalItems}</span>
+    //       </Button>
+    //     </Navbar.Collapse>
+    //   </Container>
+    // </Navbar>
   );
 };
 
