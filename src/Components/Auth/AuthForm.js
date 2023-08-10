@@ -2,7 +2,6 @@ import React, { useContext, useRef, useState } from "react";
 import classes from "./AuthForm.module.css";
 import Form from "react-bootstrap/Form";
 import { Container } from "react-bootstrap";
-import Stack from "react-bootstrap/Stack";
 import Footer from "../Layout/Footer";
 import AuthContext from "../../ContextStore/auth-context";
 import { useNavigate } from "react-router-dom";
@@ -55,7 +54,7 @@ const AuthForm = () => {
   };
   return (
     <>
-      <Container
+      {/* <Container
         style={{
           width: "55rem",
           margin: "10% 0 5% 12%",
@@ -108,6 +107,54 @@ const AuthForm = () => {
             </div>
           </Form>
         </Stack>
+      </Container> */}
+      <Container
+        style={{
+          border: "2px solid black",
+          borderRadius: "10px",
+          padding: "10px",
+          width: "70vw",
+          height: "auto",
+        }}
+      >
+        <Form onSubmit={SubmitHandler}>
+          <h1>{isLogin ? "LOGIN" : "SIGNUP"}</h1>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control
+              type="email"
+              placeholder="Enter email"
+              ref={emailInput}
+              required
+            />
+            <Form.Text className="text-muted">
+              We'll never share your email with anyone else.
+            </Form.Text>
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              ref={passwordInput}
+              required
+            />
+          </Form.Group>
+
+          <div className={classes.actions}>
+            {!isLoading && (
+              <button>{isLogin ? "Login" : "Create Account"}</button>
+            )}
+            {isLoading && <p>Sending request..</p>}
+            <button
+              type="button"
+              className={classes.toggle}
+              onClick={switchAuthModeHandler}
+            >
+              {isLogin ? "Create new account" : "Login with existing account"}
+            </button>
+          </div>
+        </Form>
       </Container>
       <Footer />
     </>
