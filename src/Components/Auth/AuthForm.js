@@ -54,60 +54,6 @@ const AuthForm = () => {
   };
   return (
     <>
-      {/* <Container
-        style={{
-          width: "55rem",
-          margin: "10% 0 5% 12%",
-        }}
-      >
-        <Stack gap={2} className="col-md-5 mx-auto">
-          <Form
-            style={{
-              border: "2px solid black",
-              borderRadius: "10px",
-              padding: "30px",
-            }}
-            onSubmit={SubmitHandler}
-          >
-            <h1>{isLogin ? "LOGIN" : "SIGNUP"}</h1>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="Enter email"
-                ref={emailInput}
-                required
-              />
-              <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-              </Form.Text>
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Password"
-                ref={passwordInput}
-                required
-              />
-            </Form.Group>
-            <div className={classes.actions}>
-              {!isLoading && (
-                <button>{isLogin ? "Login" : "Create Account"}</button>
-              )}
-              {isLoading && <p>Sending request..</p>}
-              <button
-                type="button"
-                className={classes.toggle}
-                onClick={switchAuthModeHandler}
-              >
-                {isLogin ? "Create new account" : "Login with existing account"}
-              </button>
-            </div>
-          </Form>
-        </Stack>
-      </Container> */}
       <Container
         style={{
           border: "2px solid black",
