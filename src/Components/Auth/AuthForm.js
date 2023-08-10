@@ -115,7 +115,7 @@ const AuthForm = () => {
           padding: "10px",
           width: "70vw",
           height: "auto",
-          marginTop: "10%",
+          marginTop: "7%",
         }}
       >
         <Form onSubmit={SubmitHandler}>
