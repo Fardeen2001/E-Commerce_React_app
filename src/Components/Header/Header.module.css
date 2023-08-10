@@ -1,5 +1,5 @@
 .title {
-  width: 100%;
+  width: 100vw;
   background-color: #777777;
   padding: 0 30px 30px;
   margin-top: 4%;
@@ -9,4 +9,20 @@
   font-weight: bold;
   color: #fff;
   text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .title h1 {
+    font-size: 60px;
+  }
+  .title {
+    margin-top: 8%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .title h1 {
+    font-size: 40px;
+  }
+  .title {
+    margin-top: 11%;
+  }
 }

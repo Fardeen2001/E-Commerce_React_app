@@ -22,7 +22,7 @@ const Contact = (props) => {
   };
   return (
     <>
-      <Header />
+      {/* <Header />
 
       <Form onSubmit={submitHandler}>
         <Container className="m-5">
@@ -57,7 +57,54 @@ const Contact = (props) => {
             Submit
           </Button>
         </Container>
-      </Form>
+      </Form> */}
+      <Header />
+      <Container
+        style={{
+          border: "2px solid black",
+          borderRadius: "10px",
+          padding: "10px",
+          width: "70vw",
+          height: "auto",
+          marginBlock: "80px",
+        }}
+      >
+        <Form onSubmit={submitHandler}>
+          <h1>Contact Us</h1>
+          <Form.Group className="mb-3" controlId="formBasicName">
+            <Form.Label>Name</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter Your name"
+              ref={nameRef}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control
+              type="email"
+              placeholder="Enter email"
+              ref={emailRef}
+              required
+            />
+            <Form.Text className="text-muted">
+              We'll never share your email with anyone else.
+            </Form.Text>
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicNumber">
+            <Form.Label>Phone Number</Form.Label>
+            <Form.Control
+              type="number"
+              placeholder="Enter Number"
+              ref={numberRef}
+            />
+          </Form.Group>
+          <Button variant="info" type="submit">
+            Submit
+          </Button>
+        </Form>
+      </Container>
+
       <Footer />
     </>
   );
