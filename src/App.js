@@ -29,7 +29,7 @@ function App() {
   };
   const addContactHandler = async (contactData) => {
     const response = await fetch(
-      "https://e-commerce-app-fardeen-default-rtdb.asia-southeast1.firebasedatabase.app/",
+      "https://e-commerce-app-fardeen-default-rtdb.asia-southeast1.firebasedatabase.app/contact.json",
       {
         method: "POST",
         body: JSON.stringify(contactData),
